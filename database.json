@@ -1,0 +1,185 @@
+{
+  "protected_resources": {
+    "products": [
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ]
+  },
+  "users": [
+    {
+      "name": "Catherine Waberer",
+      "birthday": "12/2/2002",
+      "email": "cwaberer2@umn.edu",
+      "phone": "652-951-931323",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Bobbette Kenway",
+      "email": "bkenway3@wiley.com",
+      "password": "bkenway3",
+      "phone": "767-354-8928",
+      "birthday": "11/14/1995",
+      "bio": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+      "gender": "Female",
+      "avatar": "https://robohash.org/abesselaudantium.jpg?size=150x150&set=set1"
+    },
+    {
+      "id": 5,
+      "name": "Goober Banting",
+      "email": "gbanting4@prweb.com",
+      "password": "gbanting4",
+      "phone": "563-471-5104",
+      "birthday": "9/22/1992",
+      "bio": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+      "gender": "Male",
+      "avatar": "https://robohash.org/atqueearumquaerat.png?size=150x150&set=set1"
+    },
+    {
+      "id": 6,
+      "name": "Roana Clail",
+      "email": "rclail5@geocities.jp",
+      "password": "rclail5",
+      "phone": "952-408-0056",
+      "birthday": "5/13/1992",
+      "bio": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+      "gender": "Female",
+      "avatar": "https://robohash.org/voluptatelaborummodi.jpg?size=150x150&set=set1"
+    },
+    {
+      "id": 7,
+      "name": "Lindy Hubbard",
+      "email": "lhubbard6@networkadvertising.org",
+      "password": "lhubbard6",
+      "phone": "967-486-1276",
+      "birthday": "11/24/2006",
+      "bio": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      "gender": "Male",
+      "avatar": "https://robohash.org/doloresnatusaut.jpg?size=150x150&set=set1"
+    },
+    {
+      "id": 8,
+      "name": "Jerad Adney",
+      "email": "jadney7@weebly.com",
+      "password": "jadney7",
+      "phone": "787-503-1575",
+      "birthday": "1/5/2009",
+      "bio": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+      "gender": "Male",
+      "avatar": "https://robohash.org/debitiseacumque.bmp?size=150x150&set=set1"
+    },
+    {
+      "id": 9,
+      "name": "Davina Tassaker",
+      "email": "dtassaker8@latimes.com",
+      "password": "dtassaker8",
+      "phone": "932-840-1592",
+      "birthday": "10/24/2000",
+      "bio": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+      "gender": "Female",
+      "avatar": "https://robohash.org/liberoametdolores.png?size=150x150&set=set1"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Appetizer - Lobster Phyllo Roll",
+      "thumbnail": "https://robohash.org/animiblanditiisveniam.jpg?size=350x200&set=set1",
+      "price": 121.99,
+      "quantity": 61,
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "Leeks - Large",
+      "thumbnail": "https://robohash.org/architectodoloresquo.jpg?size=350x200&set=set1",
+      "price": 150.05,
+      "quantity": 87,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "Wiberg Cure",
+      "thumbnail": "https://robohash.org/etoccaecatieum.jpg?size=350x200&set=set1",
+      "price": 173.51,
+      "quantity": 92,
+      "status": false
+    },
+    {
+      "id": 4,
+      "name": "Bread - Dark Rye, Loaf",
+      "thumbnail": "https://robohash.org/quiistequi.png?size=350x200&set=set1",
+      "price": 58.62,
+      "quantity": 68,
+      "status": true
+    },
+    {
+      "id": 5,
+      "name": "Coffee - Beans, Whole",
+      "thumbnail": "https://robohash.org/maioresatquenihil.png?size=350x200&set=set1",
+      "price": 171.54,
+      "quantity": 11,
+      "status": false
+    },
+    {
+      "id": 6,
+      "name": "Ginger - Fresh",
+      "thumbnail": "https://robohash.org/fugitidest.bmp?size=350x200&set=set1",
+      "price": 116.37,
+      "quantity": 84,
+      "status": true
+    },
+    {
+      "id": 7,
+      "name": "Pastry - Cherry Danish - Mini",
+      "thumbnail": "https://robohash.org/temporibuseossimilique.jpg?size=350x200&set=set1",
+      "price": 195.78,
+      "quantity": 22,
+      "status": true
+    },
+    {
+      "id": 8,
+      "name": "Chicken - Leg, Fresh",
+      "thumbnail": "https://robohash.org/minusabsaepe.jpg?size=350x200&set=set1",
+      "price": 183.8,
+      "quantity": 14,
+      "status": true
+    },
+    {
+      "id": 9,
+      "name": "Dish Towel",
+      "thumbnail": "https://robohash.org/etnonrepellendus.jpg?size=350x200&set=set1",
+      "price": 86.2,
+      "quantity": 30,
+      "status": false
+    },
+    {
+      "id": 10,
+      "name": "Mix - Cappucino Cocktail",
+      "thumbnail": "https://robohash.org/maximeadicta.jpg?size=350x200&set=set1",
+      "price": 190.35,
+      "quantity": 13,
+      "status": true
+    }
+  ],
+  "cart": [
+    {
+      "id": 4,
+      "name": "Bread - Dark Rye, Loaf",
+      "thumbnail": "https://robohash.org/quiistequi.png?size=350x200&set=set1",
+      "price": 58.62,
+      "quantity": 68,
+      "status": true
+    },
+    {
+      "id": 6,
+      "name": "Ginger - Fresh",
+      "thumbnail": "https://robohash.org/fugitidest.bmp?size=350x200&set=set1",
+      "price": 116.37,
+      "quantity": 84,
+      "status": true
+    }
+  ]
+}
