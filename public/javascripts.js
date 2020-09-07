@@ -1,4 +1,4 @@
-const API = "https://qlhocvien.herokuapp.com/users";
+const API = "https://ql-hoc-vien.herokuapp.com/users";
 
 
 // lấy dữ liệu đổ vào bảng.
