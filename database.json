@@ -7,57 +7,55 @@
       "DELETE"
     ]
   },
-  "users": [
-    {
+  "users": [{
       "name": "Catherine Waberer",
-      "birthday": "12/2/2002",
+      "birthday": "2002",
       "email": "cwaberer2@umn.edu",
       "phone": "652-951-931323",
-      "id": 3
+      "id": 1
     },
     {
-      "id": 5,
+      "id": 2,
       "name": "Goober Banting",
       "email": "gbanting4@prweb.com",
       "password": "gbanting4",
       "phone": "563-471-5104",
-      "birthday": "9/22/1992",
+      "birthday": "1992",
       "bio": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
       "gender": "Male",
       "avatar": "https://robohash.org/atqueearumquaerat.png?size=150x150&set=set1"
     },
     {
-      "id": 6,
+      "id": 3,
       "name": "Roana Clail",
       "email": "rclail5@geocities.jp",
       "password": "rclail5",
       "phone": "952-408-0056",
-      "birthday": "5/13/1992",
+      "birthday": "1992",
       "bio": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
       "gender": "Female",
       "avatar": "https://robohash.org/voluptatelaborummodi.jpg?size=150x150&set=set1"
     },
     {
-      "id": 7,
+      "id": 4,
       "name": "Lindy Hubbard",
       "email": "lhubbard6@networkadvertising.org",
       "password": "lhubbard6",
       "phone": "967-486-1276",
-      "birthday": "11/24/2006",
+      "birthday": "2006",
       "bio": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
       "gender": "Male",
       "avatar": "https://robohash.org/doloresnatusaut.jpg?size=150x150&set=set1"
     },
     {
       "name": "Jerad Adn12355",
-      "birthday": "1/5/2009",
+      "birthday": "2009",
       "email": "jadney7@weebly.com",
       "phone": "035-76-854",
-      "id": 8
+      "id": 5
     }
   ],
-  "products": [
-    {
+  "products": [{
       "id": 1,
       "name": "Appetizer - Lobster Phyllo Roll",
       "thumbnail": "https://robohash.org/animiblanditiisveniam.jpg?size=350x200&set=set1",
@@ -138,8 +136,7 @@
       "status": true
     }
   ],
-  "cart": [
-    {
+  "cart": [{
       "id": 4,
       "name": "Bread - Dark Rye, Loaf",
       "thumbnail": "https://robohash.org/quiistequi.png?size=350x200&set=set1",
