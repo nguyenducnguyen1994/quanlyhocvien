@@ -1,35 +1,39 @@
 const API = "https://ql-hoc-vien.herokuapp.com/users";
+let searchData = '';
+let _currentPage = 1;
+let _sortQ = 'id';
+let order = 'desc';
+let userLimitPerPage = 10;
 
-
-// lấy dữ liệu đổ vào bảng.
+// LẤY DỮ LIỆU VỀ ĐỔ RA TABLE
 $(function () {
+    // Gọi lên API để lấy danh sách user
     $.ajax({
-        url: API,
+        url: `${API}?_page=${_currentPage}&&_order=${order}&&_sort=${_sortQ}`,
         method: "GET",
-    })
-        .done(function (dataUsers) {
-            htmlString = "";
-            for (let i = 0; i < dataUsers.length; i++) {
-                htmlString += `<tr>
-                        <td>${dataUsers[i].name}</td>
-                        <td>${dataUsers[i].birthday}</td>
-                        <td>${dataUsers[i].email}</td>
-                        <td>${dataUsers[i].phone}</td>
-                        <td class="d-flex justify-content-between align-items-center">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#form-edit"  onclick="renderInfoUser(${dataUsers[i].id})"><i class="far fa-edit"> Chỉnh sửa</i></button><span>|</span>
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-delete"><i class="far fa-trash-alt" onclick="renderInfoUser(${dataUsers[i].id})"> Xóa</i></button>
-                        </td>
-                </tr>`;
-            }
-            $('#list-users').html(htmlString);
-        });
+    }).done(function (users, textStatus, xhr) {
+        // Gọi hàm loadTableUser để đổ dữ liệu ra bảng
+        loadTableUser(users);
+        renderPageBtn(xhr.getResponseHeader('X-Total-Count'));
+    });
 });
+// lấy dữ liệu ra bảng
+function loadTableUser(user) {
+    for (let i = 0; i < user.length; i++) {
+        $("#table-users").append(`<tr id="row-${user[i].id}">
+    <td>${user[i].name || "chưa biết"}</td>
+    <td>${user[i].birthday || "chưa biết"}</td>
+    <td>${user[i].email || "chưa biết"}</td>
+    <td>${user[i].phone || "chưa biết"}</td>
+    <td class="d-flex justify-content-between align-items-center">
+    <button class="btn btn-info" data-toggle="modal" data-target="#form-edit" onclick="renderInfoUser(${user[i].id})"><i class="far fa-edit"></i> Chỉnh sửa</button><span> | </span>
+            <button button class="btn btn-danger" onclick = "deleteUser(${user[i].id})" > <i class="far fa-trash-alt"> Xóa</i></button>
+    </td >
+</tr > `);
+    }
+}
 
-
-
-
-
-// Tạo mới user
+// TẠO MỚI USER
 function createUserAPI(user) {
     $.ajax({
         method: 'POST',
@@ -52,47 +56,39 @@ function createUser() {
     createUserAPI(user);
 }
 
+// XÓA USER 
+function deleteApi(id) {
+    $.ajax({
+        method: 'DELETE',
+        url: `${API}/${id}`,
+    })
+        .done(function () {
+            // Ản modam xóa
+            $("#modal-delete").modal("hide");
+            // Xóa dòng
+            $(`#row-${id}`).remove();
+        })
+}
 
-// gửi request lên server lấy id
+function deleteUser(id) {
+    // Hiện modal xóa
+    $("#modal-delete").modal("show");
+    // Lấy button có id confirm-delete khi ấn gọi hàm deleteApi
+    $('#confirm-delete').click(function () {
+        deleteApi(id);
+    });
+}
+
 function renderInfoUser(id) {
     $.ajax({
         method: "GET",
-        url: API + "/" + id,
+        url: `${API}/${id}`,
     }).done(function (item) {
         if (renderContentEdit) {
             renderContentEdit(item);
         }
-        if (renderContentDelete) {
-            renderContentDelete(item);
-        }
     });
 }
-
-
-
-// Xóa thông tin user
-function renderContentDelete(item) {
-    // Tạo nút xóa và gán sự kiện xóa (truyền vào id của user)
-    let btnDelete = "";
-    btnDelete += `<button type="button" onclick="deleteUserApi(${item.id})" class="btn btn-danger"><i class="far fa-trash-alt"></i> Xóa</button>`;
-    $(".btn-delete").html(btnDelete);
-}
-
-function deleteUserApi(id) {
-    $.ajax({
-        method: "DELETE",
-        url: API + "/" + id,
-        dataType: "json",
-    }).done(function () {
-        // Load lại table
-        location.reload();
-        // Tắt modal
-        $("#modal-delete").modal("hide");
-    });
-}
-
-
-
 
 // Chỉnh sửa user
 function renderContentEdit(item) {
@@ -105,18 +101,15 @@ function renderContentEdit(item) {
     // Render button lưu và ván sự kiện
     let btnUpdate = "";
     btnUpdate +=
-        ' <button type="button" onclick="editInfoUserApi(' +
-        item.id +
-        ')"  class="btn btn-primary"><i class="far fa-save"></i> Lưu</button>';
-    $(".btn-update-user").html(btnUpdate);
+        `<button button class="btn btn-info" onclick = "editInfoUserApi(${item.id})" ><i class="far fa-save"></i> Lưu</button>`
+    $("#btn-update-user").html(btnUpdate);
 }
-
 
 // Lấy thông tin đã chỉnh sửa lưu lại vào bảng
 function editInfoUserApi(id) {
     $.ajax({
         method: "PUT",
-        url: API + "/" + id,
+        url: `${API}/${id}`,
         contentType: "application/json",
         data: JSON.stringify({
             name: $("#editName").val(),
@@ -134,9 +127,38 @@ function editInfoUserApi(id) {
 
 
 
+// Page
+function renderPageBtn(usersCount) {
+    let pageCount = Math.ceil(usersCount / userLimitPerPage);
+    for (let i = 1; i <= pageCount; i++) {
+        $('#page-indicator').append(`<button class="btn btn-secondary m-2" onclick="changePage(this)">${i}</button>`);
+    }
+}
 
+function renderPage() {
+    $.ajax({
+        type: 'GET',
+        url: `${API}?_page=${_currentPage}&&_order=${order}&&_sort=${_sortQ}&&q=${searchData}`,
+        success: function (users) {
+            loadTableUser(users);
+        }
+    });
+}
 
-
+function changePage(ele) {
+    _currentPage = $(ele).text();
+    $('tbody').html('');
+    // $('.loader').show();
+    $('#page-indicator button').removeClass('active');
+    ele.classList.add('active');
+    $.ajax({
+        type: 'GET',
+        url: `${API}?_page=${_currentPage}&&_order=${order}&&_sort=${_sortQ}&&q=${searchData}`,
+        success: function (users) {
+            loadTableUser(users);
+        }
+    });
+}
 
 
 

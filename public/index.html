@@ -21,39 +21,36 @@
     <main>
         <div class="container">
             <!-- Bảng danh sách học viên -->
-            <div class="d-flex justify-content-start pb-3">
+            <div class="d-flex justify-content-between pb-3">
                 <button type="button " class="btn btn-success" data-toggle="modal" data-target="#form-add"><i
                         class="fas fa-plus-circle">
                         Thêm</i></button>
+
+                <form class="form-inline">
+                    <input class="form-control" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
             </div>
             <div class="table-responsive-md">
                 <table id="myTable" class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col" onclick="sortTable(0)">Họ tên</th>
-                            <th scope="col" onclick="sortTable(1)">Năm sinh</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Họ tên <a href="#" onclick="sortTable(0)"><i class="fas fa-sort"></i></a>
+                            </th>
+                            <th scope="col">Năm sinh</th>
+                            <th scope="col">Email <a href="#" onclick="sortTable(0)"><i class="fas fa-sort"></i></a>
+                            </th>
+
                             <th scope="col">Số điện thoại</th>
                             <th colspan="2"></th>
                         </tr>
                     </thead>
-                    <tbody id="list-users" class="border">
-                        <tr>
-                            <td>Nguyễn Đức Nguyên</td>
-                            <td>1994</td>
-                            <td>nguyenudcnguyen@gmail.com</td>
-                            <td>035768478</td>
-                            <td class="d-flex justify-content-between align-items-center">
-                                <button class="btn btn-info" onclick="getEdit()"><i class="far fa-edit"> Chỉnh
-                                        sửa</i></button><span>|</span>
-                                <button class="btn btn-danger" onclick="getDelete()"><i class="far fa-trash-alt">
-                                        Xóa</i></button>
-                            </td>
-                        </tr>
-
-
+                    <tbody id="table-users" class="border">
+                        <!-- đổ dữ liệu vào đây -->
                     </tbody>
                 </table>
+                <div id="page-indicator" class="d-flex justify-content-center"></div>
             </div>
 
             <!-- Modal thêm học viên -->
@@ -127,8 +124,9 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <div class="btn-update-user"></div>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                            <div id="btn-update-user"></div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fas fa-chevron-left"></i> Thoát</button>
                         </div>
                     </div>
                 </div>
@@ -151,7 +149,9 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                 <i class="fas fa-chevron-left"></i> Thoát
                             </button>
-                            <div class="btn-delete"></div>
+                            <button type="button" id="confirm-delete" class="btn btn-danger" onclick="deleteUser()">
+                                <i class="far fa-trash-alt"> Xóa</i>
+                            </button>
                         </div>
                     </div>
                 </div>

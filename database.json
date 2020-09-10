@@ -16,17 +16,6 @@
       "id": 3
     },
     {
-      "id": 4,
-      "name": "Bobbette Kenway",
-      "email": "bkenway3@wiley.com",
-      "password": "bkenway3",
-      "phone": "767-354-8928",
-      "birthday": "11/14/1995",
-      "bio": "In congue. Etiam justo. Etiam pretium iaculis justo.",
-      "gender": "Female",
-      "avatar": "https://robohash.org/abesselaudantium.jpg?size=150x150&set=set1"
-    },
-    {
       "id": 5,
       "name": "Goober Banting",
       "email": "gbanting4@prweb.com",
@@ -60,26 +49,11 @@
       "avatar": "https://robohash.org/doloresnatusaut.jpg?size=150x150&set=set1"
     },
     {
-      "id": 8,
-      "name": "Jerad Adney",
-      "email": "jadney7@weebly.com",
-      "password": "jadney7",
-      "phone": "787-503-1575",
+      "name": "Jerad Adn12355",
       "birthday": "1/5/2009",
-      "bio": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
-      "gender": "Male",
-      "avatar": "https://robohash.org/debitiseacumque.bmp?size=150x150&set=set1"
-    },
-    {
-      "id": 9,
-      "name": "Davina Tassaker",
-      "email": "dtassaker8@latimes.com",
-      "password": "dtassaker8",
-      "phone": "932-840-1592",
-      "birthday": "10/24/2000",
-      "bio": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
-      "gender": "Female",
-      "avatar": "https://robohash.org/liberoametdolores.png?size=150x150&set=set1"
+      "email": "jadney7@weebly.com",
+      "phone": "035-76-854",
+      "id": 8
     }
   ],
   "products": [
